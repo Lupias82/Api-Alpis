@@ -1084,6 +1084,18 @@ router.get('/game/tembaklontong', async (req, res, next) => {
 })
 
 })
+router.get('/game/aqua', async (req, res, next) => {
+
+	let ra = await fetchJson('https://raw.githubusercontent.com/Lupias82/database-from-bochilteam/master/games/aqua.json')
+	let ha = ra[Math.floor(Math.random() * ra.length)]
+		  
+  res.json({
+	status: true,
+	creator: `${creator}`,
+	result: ha
+})
+
+})
 
 //―――――――――――――――――――――――――――――――――――――――――― ┏ Maker ┓ ―――――――――――――――――――――――――――――――――――――――――― \\
 
